@@ -3,10 +3,8 @@ const mongoose = require('mongoose');
 const connectDB = async () => {
   try {
     await mongoose.connect('your_mongodb_connection_string', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      connectTimeoutMS: 20000,
-      socketTimeoutMS: 20000,
+      connectTimeoutMS: 20000,  // Set a timeout for establishing the connection
+      socketTimeoutMS: 20000,   // Set a timeout for socket operations
     });
     console.log('MongoDB connected successfully');
   } catch (error) {
